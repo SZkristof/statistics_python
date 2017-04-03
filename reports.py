@@ -32,5 +32,17 @@ def get_latest(file_name):
         return data_list[indicator_place][0]
 
 
+def count_by_genre(file_name, genre):
+
+    with open(file_name) as file:
+        data_list = file.read().splitlines()
+        data_list = [item.split('\t') for item in data_list]
+        list_of_genres = []
+
+        for i in range(len(data_list)):
+            list_of_genres.append(data_list[i][3])
+        final_number = list_of_genres.count(genre)
+        return final_number
+
 
 
