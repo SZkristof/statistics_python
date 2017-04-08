@@ -53,7 +53,7 @@ def get_line_number_by_title(file_name, title):
         for i, line in enumerate(data_list):
             if str(title) in line:
                 return (i+1)
-        return ValueError
+        raise ValueError
 
 
 def get_genres(file_name):
